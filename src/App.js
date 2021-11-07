@@ -9,7 +9,7 @@ import Typewriter from 'typewriter-effect';
 function App() {
   return (
   <>
-    <main className="bg-gray-700 h-full w-screen justify-center items-center grid grid-cols-1">
+    <main className="bg-gray-700 h-full w-full justify-center items-center grid grid-cols-1">
        
       <motion.section className="grid justify-center items-center h-32 mt-2"
         initial={{ y: -250 }}
@@ -27,8 +27,11 @@ function App() {
           transition={{ type: 'spring', delay: 2, duration: 1, stiffness: 60 }}>
             <Typewriter 
               options={{
+                delay: 70,
+                pauseFor: 2000,
                 strings: ['Front End Flexibility with a Desire for Design.', '"Design is not a single object or dimension. Design is messy and complex." - Natasha Jen"' ],
                 autoStart: true,
+                deleteSpeed: 20,
                 loop: true,
               }}
             /> 
@@ -51,28 +54,31 @@ function App() {
           </IconContext.Provider>
       </motion.section>
 
-      <section className="grid relative justify-center items-center">
-        <p className="text-white font-dosis text-lg grid justify-center items-center text-center w-72">I am an aspiring Front End designer and amateur videographer. Recently, I graduated from the Georgia Technical Institute of Technology obtaining my certification in Full Stack Web Development. </p>
-      </section>
+      <motion.section className="grid relative justify-center items-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 4, duration: 1 }}>
+        <p className="text-white text-lg grid justify-center items-center text-center w-72">I am an aspiring Front End designer and amateur videographer. Recently, I graduated from the Georgia Technical Institute of Technology obtaining my certification in Full Stack Web Development. </p>
+      </motion.section>
 
       <section className="flex items-center gap-x-16 justify-center mt-20">
-        <motion.button className="border-2 rounded-md p-2"
+        <motion.button className="border-b-2 p-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 4, duration: .5 }}
+          transition={{ delay: 4.5, duration: .5 }}
           whileHover={{ scale: 1.3, transition: { duration: .3 }, }}
           whileTap={{ scale: 0.9 }}>
-            <p className="text-white">
+            <p className="text-indigo-400">
               Resume
             </p>
         </motion.button>
-        <motion.button  className="border-2 rounded-md p-2"
+        <motion.button  className="border-b-2 p-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 4.5, duration: 1 }}
+          transition={{ delay: 5, duration: 1 }}
           whileHover={{ scale: 1.3, transition: { duration: .5 }, }}
           whileTap={{ scale: 0.9 }}>
-            <p className="text-white">
+            <p className="text-indigo-400">
               Contact
             </p>
         </motion.button>
