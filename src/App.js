@@ -2,14 +2,18 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <main className="bg-gray-700 h-screen grid grid-cols-1">
+      
         
-        <p>
-          <h1>Hello, I'm Will.</h1>
-        </p>
-      </header>
-    </div>
+        <section className="grid justify-center items-center">
+          <h1 className="text-3xl text-white">Hello, I'm Will.</h1>
+        </section>
+        <section className="grid justify-center items-center">
+          <p className="text-white">uWu</p>
+        </section>
+        
+      
+    </main>
   );
 }
 
