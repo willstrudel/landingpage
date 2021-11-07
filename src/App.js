@@ -4,6 +4,7 @@ import { IconContext } from 'react-icons';
 import MeAndHarley from './images/MeAndHarley.jpeg';
 import { motion } from "framer-motion"
 import { IoIosArrowDown } from "react-icons/io";
+import Typewriter from 'typewriter-effect';
 
 function App() {
   return (
@@ -20,13 +21,18 @@ function App() {
       </motion.section>
 
       <section className="grid justify-center items-center">
-        <motion.section className="grid justify-center items-center text-center h-12 w-72"
+        <motion.section className="text-white font-quicksand grid justify-center items-center text-center h-12 w-72"
           initial={{ x: -1000 }}
           animate={{ x: 0 }}
           transition={{ type: 'spring', delay: 2, duration: 1, stiffness: 60 }}>
-            <p className="grid justify-center text-white items-center text-center font-quicksand">
-              Front End Flexibility with a Desire for Design
-            </p> 
+            <Typewriter 
+              options={{
+                strings: ['Front End Flexibility with a Desire for Design.', '"Design is not a single object or dimension. Design is messy and complex." - Natasha Jen"' ],
+                autoStart: true,
+                loop: true,
+              }}
+            /> 
+           
         </motion.section>
       </section>
 
@@ -39,7 +45,7 @@ function App() {
             <img className="relative rounded-full xs:h-60 xs:w-60 sm:h-80 sm:w-80 object-cover xs:bottom-44 sm:bottom-60 left-8 border-teal-200 border-2" src={MeAndHarley} alt=""></img>
           </figure>
           <IconContext.Provider value= {{ size: "2em", }}>
-            <p className="grid relative justify-center items-center bottom-32 animate-pulse text-indigo-400">
+            <p className="grid relative justify-center items-center bottom-32 animate-pulse animate-bounce text-indigo-400">
               <IoIosArrowDown />
             </p>
           </IconContext.Provider>
@@ -50,21 +56,21 @@ function App() {
       </section>
 
       <section className="flex items-center gap-x-16 justify-center mt-20">
-        <motion.button
+        <motion.button className="border-2 rounded-md p-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 4, duration: .5 }}
-          whileHover={{ scale: 1.5, transition: { duration: .3 }, }}
+          whileHover={{ scale: 1.3, transition: { duration: .3 }, }}
           whileTap={{ scale: 0.9 }}>
             <p className="text-white">
               Resume
             </p>
         </motion.button>
-        <motion.button
+        <motion.button  className="border-2 rounded-md p-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 4.5, duration: 1 }}
-          whileHover={{ scale: 1.5, transition: { duration: .5 }, }}
+          whileHover={{ scale: 1.3, transition: { duration: .5 }, }}
           whileTap={{ scale: 0.9 }}>
             <p className="text-white">
               Contact
