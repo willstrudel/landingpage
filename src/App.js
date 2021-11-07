@@ -3,12 +3,12 @@ import { GrLinkedin, GrYoutube, GrGithub, GrInstagram, } from 'react-icons/gr';
 import { IconContext } from 'react-icons';
 import MeAndHarley from './images/MeAndHarley.jpeg';
 import { motion } from "framer-motion"
-
+import { IoIosArrowDown } from "react-icons/io";
 
 function App() {
   return (
   <>
-    <main className="bg-gray-700 h-screen w-screen justify-center items-center grid grid-cols-1">
+    <main className="bg-gray-700 h-full w-screen justify-center items-center grid grid-cols-1">
        
       <motion.section className="grid justify-center items-center h-32 mt-2"
         initial={{ y: -250 }}
@@ -24,13 +24,13 @@ function App() {
           initial={{ x: -1000 }}
           animate={{ x: 0 }}
           transition={{ type: 'spring', delay: 2, duration: 1, stiffness: 60 }}>
-            <p className="grid justify-center text-white items-center text-center font-dosis">
+            <p className="grid justify-center text-white items-center text-center font-quicksand">
               Front End Flexibility with a Desire for Design
             </p> 
         </motion.section>
       </section>
 
-      <motion.section className="grid justify-center items-center h-2/3"
+      <motion.section className="grid justify-center items-center h-2/3 mb-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}>
@@ -38,9 +38,18 @@ function App() {
             <div className="relative bg-teal-200 xs:h-60 xs:w-60 sm:h-80 sm:w-80 rounded-full xs:bottom-0 right-8 border-indigo-400 border-2"></div>
             <img className="relative rounded-full xs:h-60 xs:w-60 sm:h-80 sm:w-80 object-cover xs:bottom-44 sm:bottom-60 left-8 border-teal-200 border-2" src={MeAndHarley} alt=""></img>
           </figure>
+          <IconContext.Provider value= {{ size: "2em", }}>
+            <p className="grid relative justify-center items-center bottom-32 animate-pulse text-indigo-400">
+              <IoIosArrowDown />
+            </p>
+          </IconContext.Provider>
       </motion.section>
 
-      <section className="flex items-center gap-x-16 justify-center mb-16">
+      <section className="grid relative justify-center items-center">
+        <p className="text-white font-dosis text-lg grid justify-center items-center text-center w-72">I am an aspiring Front End designer and amateur videographer. Recently, I graduated from the Georgia Technical Institute of Technology obtaining my certification in Full Stack Web Development. </p>
+      </section>
+
+      <section className="flex items-center gap-x-16 justify-center mt-20">
         <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -65,11 +74,11 @@ function App() {
 
       
       <IconContext.Provider value= {{ size: "2em" }}>
-      <motion.section className="grid justify-center items-center mb-20"
+      <motion.section className="grid justify-center items-center mb-40"
       initial={{ y: 250 }}
       animate={{ y: 0 }}
       transition={{ delay: 0.3, type: 'spring', stiffness: 80 }}>
-        <div className="flex justify-center">
+        <div className="flex justify-center relative top-24">
           <ul className="flex space-x-16">
             <a className=" text-indigo-400 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.linkedin.com/in/will-struder" target="_blank" rel="noopener noreferrer"><li><GrLinkedin /></li></a>
             <a className=" text-indigo-400 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.github.com/willstrudel" target="_blank" rel="noopener noreferrer"><li><GrGithub /></li></a>
