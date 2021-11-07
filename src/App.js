@@ -1,35 +1,81 @@
 import './App.css';
 import { GrLinkedin, GrYoutube, GrGithub, GrInstagram, } from 'react-icons/gr';
+import { IconContext } from 'react-icons';
+import MeAndHarley from './images/MeAndHarley.jpeg';
+import { motion } from "framer-motion"
+
 
 function App() {
   return (
   <>
-    <main className="bg-gray-700 h-screen grid grid-cols-1">
+    <main className="bg-gray-700 h-screen w-screen justify-center items-center grid grid-cols-1">
        
-      <section className="grid justify-center items-center h-32 mt-12">
-        <h1 className="text-3xl text-white items center justify-center flex">
-          Hello, I'm <span className="text-indigo-400 ml-2">Will</span>
-        </h1>
-        <p className="grid justify-center text-white items-center mt-8">
-          Front End Flexibility with a Desire for Design
-        </p>
-        <figure className="grid justify-center items-center mt-20">
-          <div className="bg-teal-200 h-80 w-80 rounded-full"></div>
-        </figure>
+      <motion.section className="grid justify-center items-center h-32 mt-2"
+        initial={{ y: -250 }}
+        animate={{ y: 0 }}
+        transition={{ delay: 0.3, type: 'spring', stiffness: 80 }}>
+          <h1 className="text-3xl text-white items center justify-center flex">
+            Hello, I'm <span className="text-indigo-400 ml-2">Will</span>
+          </h1>
+      </motion.section>
+
+      <section className="grid justify-center items-center">
+        <motion.section className="grid justify-center items-center text-center h-12 w-72"
+          initial={{ x: -1000 }}
+          animate={{ x: 0 }}
+          transition={{ type: 'spring', delay: 2, duration: 1, stiffness: 60 }}>
+            <p className="grid justify-center text-white items-center text-center font-dosis">
+              Front End Flexibility with a Desire for Design
+            </p> 
+        </motion.section>
+      </section>
+
+      <motion.section className="grid justify-center items-center h-4/5"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}>
+          <figure className="grid justify-center items-center mt-20">
+            <div className="relative bg-teal-200 xs:h-60 xs:w-60 sm:h-80 sm:w-80 rounded-full xs:bottom-0 right-8 border-indigo-400 border-2"></div>
+            <img className="relative rounded-full xs:h-60 xs:w-60 sm:h-80 sm:w-80 object-cover xs:bottom-44 sm:bottom-60 left-8 border-teal-200 border-2" src={MeAndHarley} alt=""></img>
+          </figure>
+      </motion.section>
+
+      <section className="flex items-center gap-x-16 justify-center mb-12">
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 4, duration: .5 }}
+          whileHover={{ scale: 1.5, transition: { duration: .3 }, }}
+          whileTap={{ scale: 0.9 }}>
+            <p className="text-white">
+              Resume
+            </p>
+        </motion.button>
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 4.5, duration: 1 }}
+          whileHover={{ scale: 1.5, transition: { duration: .5 }, }}
+          whileTap={{ scale: 0.9 }}>
+            <p className="text-white">
+              Contact
+            </p>
+        </motion.button>
       </section>
 
       
-
-      <section className="grid justify-center items-center">
+      <IconContext.Provider value= {{ size: "2em" }}>
+      <section className="grid justify-center items-center mb-20">
         <div className="flex justify-center">
-          <ul className="flex space-x-12">
-            <a className=" text-indigo-400 visited:text-blue-300 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.linkedin.com/in/will-struder" target="_blank" rel="noopener noreferrer"><li><GrLinkedin /></li></a>
-            <a className=" text-indigo-400 visited:text-blue-300 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.github.com/willstrudel" target="_blank" rel="noopener noreferrer"><li><GrGithub /></li></a>
-            <a className=" text-indigo-400 visited:text-blue-300 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.youtube.com/channel/UCeEj5ctVxGU0cf8bDFX_KSA" target="_blank" rel="noopener noreferrer"><li><GrYoutube /></li></a>
-            <a className=" text-indigo-400 visited:text-blue-300 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.instagram.com/willstruder/" target="_blank" rel="noopener noreferrer"><li><GrInstagram /></li></a>
+          <ul className="flex space-x-16">
+            <a className=" text-indigo-400 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.linkedin.com/in/will-struder" target="_blank" rel="noopener noreferrer"><li><GrLinkedin /></li></a>
+            <a className=" text-indigo-400 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.github.com/willstrudel" target="_blank" rel="noopener noreferrer"><li><GrGithub /></li></a>
+            <a className=" text-indigo-400 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.youtube.com/channel/UCeEj5ctVxGU0cf8bDFX_KSA" target="_blank" rel="noopener noreferrer"><li><GrYoutube /></li></a>
+            <a className=" text-indigo-400 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.instagram.com/willstruder/" target="_blank" rel="noopener noreferrer"><li><GrInstagram /></li></a>
           </ul>
         </div>   
       </section>
+      </IconContext.Provider>
 
 
 
