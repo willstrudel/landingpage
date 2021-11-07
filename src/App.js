@@ -30,17 +30,17 @@ function App() {
         </motion.section>
       </section>
 
-      <motion.section className="grid justify-center items-center h-4/5"
+      <motion.section className="grid justify-center items-center h-2/3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}>
-          <figure className="grid justify-center items-center mt-20">
+          <figure className="grid justify-center items-center">
             <div className="relative bg-teal-200 xs:h-60 xs:w-60 sm:h-80 sm:w-80 rounded-full xs:bottom-0 right-8 border-indigo-400 border-2"></div>
             <img className="relative rounded-full xs:h-60 xs:w-60 sm:h-80 sm:w-80 object-cover xs:bottom-44 sm:bottom-60 left-8 border-teal-200 border-2" src={MeAndHarley} alt=""></img>
           </figure>
       </motion.section>
 
-      <section className="flex items-center gap-x-16 justify-center mb-12">
+      <section className="flex items-center gap-x-16 justify-center mb-16">
         <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -65,7 +65,10 @@ function App() {
 
       
       <IconContext.Provider value= {{ size: "2em" }}>
-      <section className="grid justify-center items-center mb-20">
+      <motion.section className="grid justify-center items-center mb-20"
+      initial={{ y: 250 }}
+      animate={{ y: 0 }}
+      transition={{ delay: 0.3, type: 'spring', stiffness: 80 }}>
         <div className="flex justify-center">
           <ul className="flex space-x-16">
             <a className=" text-indigo-400 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.linkedin.com/in/will-struder" target="_blank" rel="noopener noreferrer"><li><GrLinkedin /></li></a>
@@ -74,7 +77,7 @@ function App() {
             <a className=" text-indigo-400 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.instagram.com/willstruder/" target="_blank" rel="noopener noreferrer"><li><GrInstagram /></li></a>
           </ul>
         </div>   
-      </section>
+      </motion.section>
       </IconContext.Provider>
 
 
