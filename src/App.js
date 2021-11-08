@@ -210,7 +210,9 @@ const Contact = (props) => {
 
 
 function Resume() {
-  const [numPages, setNumPages] = useState(3);
+  // eslint-disable-next-line
+  const [numPages, setNumPages] = useState(null);
+  // eslint-disable-next-line
   const [pageNumber, setPageNumber] = useState(1);
 
   function onDocumentLoadSuccess({ numPages }) {
