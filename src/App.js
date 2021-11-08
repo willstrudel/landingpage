@@ -167,7 +167,7 @@ const Contact = (props) => {
     <main className="min-h-screen justify-center grid items-center bg-coolGray-700">
       <h1 className="flex justify-center uppercase font-black text-white text-6xl md:text-7xl lg:text-7xl">Contact</h1>
       
-      <section className="pb-16">
+      <section className="pb-32">
         <section className="flex justify-center">
             <form onSubmit={sendEmail}>
               <div className="row mx-auto">
