@@ -6,13 +6,12 @@ import MeAndHarley from './images/MeAndHarley.jpeg';
 import { motion } from "framer-motion"
 import { IoIosArrowDown } from "react-icons/io";
 import Typewriter from 'typewriter-effect';
-import { BrowserRouter, Link } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 
 function App() {
   return (
-  <BrowserRouter>
+  <>
     <main className="bg-gray-700 h-full w-full justify-center items-center grid grid-cols-1">
        
       <motion.section className="grid justify-center items-center h-32 mt-2"
@@ -106,7 +105,7 @@ function App() {
       <p className="text-white xs:text-xs text-sm">Copyright © 2021 - Design by</p> 
       <p className="font-poiret flex text-white xs:text-xs text-sm ml-1">Will Struder</p> 
     </footer>
-  </BrowserRouter>
+  </>
   );
 }
 
