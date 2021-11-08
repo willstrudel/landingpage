@@ -10,8 +10,9 @@ import { GrLinkedin, GrYoutube, GrGithub, GrInstagram, } from 'react-icons/gr';
 import { IconContext } from 'react-icons';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoMdCheckmark } from 'react-icons/io';
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
-import PDF from './NewestResume2021.pdf'
+import PDF1 from './images/ResumePg1.jpg'
+import PDF2 from './images/ResumePg2.jpg'
+import PDF3 from './images/ResumePg3.jpg'
 
 
 
@@ -101,7 +102,7 @@ function App() {
       </IconContext.Provider>
 
     </main>
-    <footer className="w-full bottom-0 fixed inset-x-0 p-2 flex justify-center bg-black">
+    <footer className="w-full bottom-0 fixed inset-x-0 xs:p-1 p-2 flex justify-center bg-black">
       <p className="text-white xs:text-xs text-sm">Copyright © 2021 - Design by</p> 
       <p className="font-poiret flex text-white xs:text-xs text-sm ml-1">Will Struder</p> 
     </footer>
@@ -192,7 +193,7 @@ const Contact = (props) => {
         </section>
       </main>
       </IconContext.Provider>
-      <footer className="w-full bottom-0 fixed inset-x-0 p-2 flex justify-center bg-black">
+      <footer className="w-full bottom-0 fixed inset-x-0 xs:p-1 p-2 flex justify-center bg-black">
         <p className="text-white xs:text-xs text-sm md:text-lg">
           Copyright © 2021 Little River Studio LLC. Design by  
         </p> 
@@ -209,40 +210,31 @@ const Contact = (props) => {
 
 
 
-function Resume() {
-  // eslint-disable-next-line
-  const [numPages, setNumPages] = useState(null);
-  // eslint-disable-next-line
-  const [pageNumber, setPageNumber] = useState(1);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
-
+  function Resume() {
   return (
   <>
-  <main className="bg-coolGray-700 h-full w-full justify-center items-center grid">
-    <header className="relative top-16 justify-center flex text-center mb-10">
-      <h1 className="text-white text-5xl font-quicksand w-96">Take a Gander at my Resume!</h1>
+  <main className="bg-coolGray-700 h-full w-full justify-center items-center grid grid-cols-1">
+    <header className="relative xs:top-8 top-16 justify-center flex text-center mb-10">
+      <h1 className="text-white xs:text-4xl text-5xl font-black w-96">RESUME</h1>
     </header>
-    <section className="mt-20">
-      <Document file={PDF}
-      onLoadSuccess={onDocumentLoadSuccess}>
-        <p className="text-white text-sm">Page {1} of {3}</p>
-        <Page pageNumber={1} />
-        <p className="text-white text-sm">Page {2} of {3}</p>
-        <Page pageNumber={2} />
-        <p className="text-white text-sm">Page {3} of {3}</p>
-        <Page pageNumber={3} />
-      
-      </Document>
+
+    <section className="justify-center grid items-center relative xs:text-xs xs:top-4 font-quicksand text-indigo-400">
+      <a href="https://docs.google.com/document/d/16OmvjKrAadPuvuemypkgKzCxK8beehkLvQ7woAlkWLA/edit?usp=sharing" alt="ResumeDownload" download="ResumeForWebsite2021.pdf">- View on Google Drive -</a>
     </section>
+
+    <section className="h-full grid justify-center relative items-center object-contain object-center overflow-hidden">
+      <figure className="space-y-4 mt-20 
+      xs:mt-4 xs:p-2 xs:mb-8 
+      sm:mt-12 sm:p-6 sm:mb-12">
+        <img className="" alt="pg1" src={PDF1}></img>
+        <img className="" alt="pg2" src={PDF2}></img>
+        <img className="" alt="pg3" src={PDF3}></img>
+      </figure>
+      </section>
+
+
   </main>
-
-
-  
-
-    <footer className="w-full bottom-0 fixed inset-x-0 p-2 flex justify-center bg-black">
+    <footer className="w-full bottom-0 fixed inset-x-0 xs:p-1 p-2 flex justify-center bg-black">
       <p className="text-white xs:text-xs text-sm md:text-lg">
         Copyright © 2021 Little River Studio LLC. Design by  
       </p> 
@@ -253,7 +245,8 @@ function Resume() {
   
   </>
   );
-}
+  }
+
 
 
 export default App;
