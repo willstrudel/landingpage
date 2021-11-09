@@ -39,19 +39,19 @@ function App() {
     function Home() {
   return (
   <>
-    <main className="bg-coolGray-700 h-full w-full justify-center items-center grid grid-cols-1">
-      <motion.section className="grid justify-center items-center h-32 mt-2"
+    <main className="bg-coolGray-700 h-full w-full justify-center items-center grid grid-cols-1 md:grid-cols-2">
+      <motion.section className="grid justify-center items-center h-32 mt-2 md:mt-12"
         initial={{ y: -250 }}
         animate={{ y: 0 }}
         transition={{ delay: 0.3, type: 'spring', stiffness: 80 }}>
-        <h1 className="text-5xl text-white items center justify-center flex">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand text-white items center justify-center flex">
           Hello, I'm <span className="text-indigo-400 ml-2">Will</span>
         </h1>
       </motion.section>
 
-      <section className="grid justify-center items-center">
-        <motion.section className="text-white font-quicksand grid justify-center items-center text-center h-12 w-72"
-          initial={{ x: -1000 }}
+      <section className="grid justify-center items-center md:align-middle">
+        <motion.section className="text-white font-dosis grid justify-center items-center text-center md:relative md:top-28 md:text-xl lg:text-2xl h-12 w-72"
+          initial={{ x: -5000 }}
           animate={{ x: 0 }}
           transition={{ type: 'spring', delay: 2, duration: 1, stiffness: 60 }}>
             <Typewriter 
@@ -67,7 +67,7 @@ function App() {
         </motion.section>
       </section>
 
-      <motion.section className="grid justify-center items-center h-2/3 mb-16"
+      <motion.section className="grid justify-center items-center h-3/4 mb-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}>
@@ -76,7 +76,7 @@ function App() {
             <img className="relative rounded-full xs:h-60 xs:w-60 sm:h-80 sm:w-80 object-cover xs:bottom-44 sm:bottom-60 left-8 border-teal-200 border-2" src={MeAndHarley} alt=""></img>
           </figure>
           <IconContext.Provider value= {{ size: "2.5em", }}>
-            <p className="grid relative justify-center items-center bottom-28 animate-bounce text-indigo-400">
+            <p className="grid relative justify-center items-center bottom-32 animate-bounce text-indigo-400 md:invisible">
               <IoIosArrowDown />
             </p>
           </IconContext.Provider>
@@ -85,24 +85,29 @@ function App() {
       <motion.section className="grid relative justify-center items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 4, duration: 1 }}>
-          <p className="text-white text-lg grid justify-center items-center text-center w-72 border-b-2 pb-10">I am an aspiring Front End designer and amateur videographer. Recently, I graduated from the Georgia Technical Institute of Technology obtaining my certification in Full Stack Web Development. I would love to work together and see what we can create!
+        transition={{ delay: 3.5, duration: 1 }}>
+          <p className="text-white text-lg md:text-xl lg:text-2xl font-quicksand grid justify-center items-center text-center break-words p-16 sm:p-24 md:p-20 lg:p-24 md:mt-48 w-full">I am an aspiring Front End designer and amateur videographer. Recently, I graduated from the Georgia Technical Institute of Technology obtaining my certification in Full Stack Web Development. I would love to work together and see what we can create!
           </p>
       </motion.section>
 
       <IconContext.Provider value= {{ size: "2em" }}>
-        <section className="flex justify-center mb-20 mt-12">
-          <ul className=" flex space-x-12">
+        <section className="flex justify-center mb-20 mt-12 md:mt-0 md:relative md:bottom-32">
+         <motion.section className="grid justify-center items-center"
+         initial={{ y: 250 }}
+         animate={{ y: 0 }}
+         transition={{ delay: 1, type: 'spring', stiffness: 80 }}>
+          <ul className=" flex space-x-12 lg:space-x-24">
             <a className=" text-indigo-400 visited:text-blue-300 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.linkedin.com/in/will-struder" target="_blank" rel="noopener noreferrer"><li><GrLinkedin /></li></a>
             <a className=" text-indigo-400 visited:text-blue-300 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.github.com/willstrudel" target="_blank" rel="noopener noreferrer"><li><GrGithub /></li></a>
             <a className=" text-indigo-400 visited:text-blue-300 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.youtube.com/channel/UCeEj5ctVxGU0cf8bDFX_KSA" target="_blank" rel="noopener noreferrer"><li><GrYoutube /></li></a>
             <a className=" text-indigo-400 visited:text-blue-300 App-link hover:scale-125 hover:-translate-y-2 transform-gpu" href="https://www.instagram.com/willstruder/" target="_blank" rel="noopener noreferrer"><li><GrInstagram /></li></a>
           </ul>
+          </motion.section>
         </section>
       </IconContext.Provider>
 
     </main>
-    <footer className="w-full bottom-0 fixed inset-x-0 xs:p-1 p-2 flex justify-center bg-black">
+    <footer className="w-full bottom-0 fixed inset-x-0 xs:p-1 sm:p-2 flex justify-center bg-black">
       <p className="text-white xs:text-xs text-sm">Copyright © 2021 - Design by</p> 
       <p className="font-poiret flex text-white xs:text-xs text-sm ml-1">Will Struder</p> 
     </footer>
@@ -193,14 +198,10 @@ const Contact = (props) => {
         </section>
       </main>
       </IconContext.Provider>
-      <footer className="w-full bottom-0 fixed inset-x-0 xs:p-1 p-2 flex justify-center bg-black">
-        <p className="text-white xs:text-xs text-sm md:text-lg">
-          Copyright © 2021 Little River Studio LLC. Design by  
-        </p> 
-        <p className="font-poiret flex text-white xs:text-xs text-sm md:text-xl pl-2">
-          Will Struder
-        </p> 
-      </footer>
+      <footer className="w-full bottom-0 fixed inset-x-0 xs:p-1 sm:p-2 flex justify-center bg-black">
+        <p className="text-white xs:text-xs text-sm">Copyright © 2021 - Design by</p> 
+        <p className="font-poiret flex text-white xs:text-xs text-sm ml-1">Will Struder</p> 
+    </footer>
   </>
 );
 }
@@ -215,11 +216,11 @@ const Contact = (props) => {
   <>
   <main className="bg-coolGray-700 h-full w-full justify-center items-center grid grid-cols-1">
     <header className="relative xs:top-8 top-16 justify-center flex text-center mb-10">
-      <h1 className="text-white xs:text-4xl text-5xl font-black w-96">RESUME</h1>
+      <h1 className="text-white xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black w-96">RESUME</h1>
     </header>
 
-    <section className="justify-center grid items-center relative xs:text-xs xs:top-4 font-quicksand text-indigo-400">
-      <a href="https://docs.google.com/document/d/16OmvjKrAadPuvuemypkgKzCxK8beehkLvQ7woAlkWLA/edit?usp=sharing" alt="ResumeDownload" download="ResumeForWebsite2021.pdf">- View on Google Drive -</a>
+    <section className="justify-center grid items-center relative xs:text-xs sm:text-sm md:text-md lg:text-lg xs:top-4 sm:top-12 font-quicksand text-indigo-400 z-50 ">
+      <a className="hover:bg-black rounded-md p-1" href="https://docs.google.com/document/d/16OmvjKrAadPuvuemypkgKzCxK8beehkLvQ7woAlkWLA/edit?usp=sharing" target="_blank" rel="noreferrer" alt="ResumeDownload" download="ResumeForWebsite2021.pdf">- View on Google Docs -</a>
     </section>
 
     <section className="h-full grid justify-center relative items-center object-contain object-center overflow-hidden">
@@ -234,13 +235,9 @@ const Contact = (props) => {
 
 
   </main>
-    <footer className="w-full bottom-0 fixed inset-x-0 xs:p-1 p-2 flex justify-center bg-black">
-      <p className="text-white xs:text-xs text-sm md:text-lg">
-        Copyright © 2021 Little River Studio LLC. Design by  
-      </p> 
-      <p className="font-poiret flex text-white xs:text-xs text-sm md:text-xl pl-2">
-        Will Struder
-      </p> 
+  <footer className="w-full bottom-0 fixed inset-x-0 xs:p-1 sm:p-2 flex justify-center bg-black">
+      <p className="text-white xs:text-xs text-sm">Copyright © 2021 - Design by</p> 
+      <p className="font-poiret flex text-white xs:text-xs text-sm ml-1">Will Struder</p> 
     </footer>
   
   </>
