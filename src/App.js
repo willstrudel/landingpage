@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, } from 'react-router-dom';
 import './App.css';
 import MeAndHarley from './images/MeAndHarley.jpeg';
 import { motion } from "framer-motion"
@@ -50,10 +50,10 @@ function App() {
       </motion.section>
 
       <section className="grid justify-center text-center items-center relative xs:bottom-4 md:top-48 md:h-44 md:align-middle">
-        <motion.section className="bg-coolGray-600 rounded-md text-white wrap-words font-dosis grid justify-center items-center text-center relative md-top-0 md:text-xl lg:text-2xl h-12 md:h-32 lg:h-52 lg:w-96 w-80 p-6 pb-20 lg:p-12"
+        <motion.section className="bg-coolGray-600 rounded-md text-white border-2 border-indigo-400 shadow-2xl wrap-words font-dosis grid justify-center items-center text-center relative md-top-0 md:text-xl lg:text-2xl h-12 md:h-32 lg:h-52 lg:w-96 w-80 p-6 pb-20 lg:p-12"
           initial={{ x: -5000 }}
           animate={{ x: 0 }}
-          transition={{ type: 'spring', delay: 2, duration: 1, stiffness: 60 }}>
+          transition={{ type: 'spring', delay: 2, duration: 1, stiffness: 50 }}>
             <Typewriter 
               options={{
                 delay: 70,
@@ -72,8 +72,8 @@ function App() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}>
           <figure className="grid justify-center items-center">
-            <div className="relative bg-teal-200 xs:h-60 xs:w-60 sm:h-80 sm:w-80 rounded-full xs:bottom-0 right-8 border-indigo-400 border-2"></div>
-            <img className="relative rounded-full xs:h-60 xs:w-60 sm:h-80 sm:w-80 object-cover xs:bottom-44 sm:bottom-60 left-8 border-teal-200 border-2" src={MeAndHarley} alt=""></img>
+            <div className="relative bg-teal-200 xs:h-60 xs:w-60 sm:h-80 sm:w-80 rounded-full xs:bottom-0 right-8 border-indigo-400 border-2 shadow-2xl"></div>
+            <img className="relative rounded-full xs:h-60 xs:w-60 sm:h-80 sm:w-80 object-cover xs:bottom-44 sm:bottom-60 left-8 border-teal-200 border-2 shadow-2xl" src={MeAndHarley} alt=""></img>
           </figure>
           <IconContext.Provider value= {{ size: "2.5em", }}>
             <a  a href="#about" className="grid relative justify-center items-center bottom-36 animate-bounce text-indigo-400 md:invisible">
@@ -91,7 +91,7 @@ function App() {
       </motion.section>
 
       <IconContext.Provider value= {{ size: "2em" }}>
-        <section className="flex justify-center mb-20 mt-12 md:mt-0 md:relative md:bottom-32">
+        <section className="flex justify-center mb-20 mt-12 md:mt-0 md:relative md:bottom-72">
          <motion.section className="grid justify-center items-center"
          initial={{ y: 250 }}
          animate={{ y: 0 }}
