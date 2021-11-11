@@ -39,8 +39,8 @@ function App() {
     function Home() {
   return (
   <>
-    <main className="bg-coolGray-700 h-full w-full justify-center items-center grid grid-cols-1 md:grid-cols-2">
-      <motion.section className="grid justify-center items-center h-32 mt-2 md:mt-12"
+    <main className="bg-coolGray-700 h-full w-full justify-center items-center grid grid-cols-1 md:grid-cols-2 md:p-4 lg:p-0">
+      <motion.section className="grid justify-center items-center h-32 md:mt-12"
         initial={{ y: -250 }}
         animate={{ y: 0 }}
         transition={{ delay: 0.3, type: 'spring', stiffness: 80 }}>
@@ -49,8 +49,8 @@ function App() {
         </h1>
       </motion.section>
 
-      <section className="grid justify-center items-center md:align-middle">
-        <motion.section className="text-white font-dosis grid justify-center items-center text-center md:relative md:top-28 md:text-xl lg:text-2xl h-12 w-72"
+      <section className="grid justify-center text-center items-center relative xs:bottom-4 md:top-48 md:h-44 md:align-middle">
+        <motion.section className="bg-coolGray-600 rounded-md text-white wrap-words font-dosis grid justify-center items-center text-center relative md-top-0 md:text-xl lg:text-2xl h-12 md:h-32 lg:h-52 lg:w-96 w-80 p-6 pb-20 lg:p-12"
           initial={{ x: -5000 }}
           animate={{ x: 0 }}
           transition={{ type: 'spring', delay: 2, duration: 1, stiffness: 60 }}>
@@ -67,7 +67,7 @@ function App() {
         </motion.section>
       </section>
 
-      <motion.section className="grid justify-center items-center h-3/4 mb-16"
+      <motion.section className="grid justify-center items-center h-3/4 xs:mb-40"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}>
@@ -76,17 +76,17 @@ function App() {
             <img className="relative rounded-full xs:h-60 xs:w-60 sm:h-80 sm:w-80 object-cover xs:bottom-44 sm:bottom-60 left-8 border-teal-200 border-2" src={MeAndHarley} alt=""></img>
           </figure>
           <IconContext.Provider value= {{ size: "2.5em", }}>
-            <p className="grid relative justify-center items-center bottom-32 animate-bounce text-indigo-400 md:invisible">
-              <IoIosArrowDown />
-            </p>
+            <a  a href="#about" className="grid relative justify-center items-center bottom-36 animate-bounce text-indigo-400 md:invisible">
+              <IoIosArrowDown  />
+            </a>
           </IconContext.Provider>
       </motion.section>
 
-      <motion.section className="grid relative justify-center items-center"
+      <motion.section id="about" className="grid relative justify-center xs:bottom-16 items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 3.5, duration: 1 }}>
-          <p className="text-white text-lg md:text-xl lg:text-2xl font-quicksand grid justify-center items-center text-center break-words p-16 sm:p-24 md:p-20 lg:p-24 md:mt-48 w-full">I am an aspiring Front End designer and amateur videographer. Recently, I graduated from the Georgia Technical Institute of Technology obtaining my certification in Full Stack Web Development. I would love to work together and see what we can create!
+          <p className="text-white text-lg md:text-xl lg:text-2xl font-quicksand grid justify-center items-center text-center break-words p-16 sm:p-24 md:p-20 lg:p-24  md:mt-72 w-full">I am an aspiring Front End designer and amateur videographer. Recently, I graduated from the Georgia Technical Institute of Technology obtaining my certification in Full Stack Web Development. I would love to work together and see what we can create!
           </p>
       </motion.section>
 
